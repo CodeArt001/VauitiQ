@@ -4,8 +4,13 @@ import logo from "../assets/images/Logo-1.png";
 const Home = () => {
   return (
     <div>
-      <div className="flex flex-col items-center py-[5%] lg:w-[40%] w-[90%] m-auto mx-auto h-screen overflow-y-hidden">
-        <img src={logo} alt="" />
+      <div className="flex flex-col items-center py-[4%] lg:w-[40%] w-[90%] m-auto mx-auto h-screen overflow-y-hidden">
+        <img
+          style={{ mixBlendMode: "screen" }}
+          src={logo}
+          alt=""
+          className=""
+        />
         <p className="lg:text-6xl md:text-5xl text-4xl font-bold mt-3">
           Welcome to VaultiQ
         </p>
