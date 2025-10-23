@@ -1,29 +1,33 @@
 import React from "react";
-import connect from "../assets/images/connect2.png";
+// import connect from "../assets/images/connect2.png";
+import marked from "../assets/images/mark.png";
 import capital from "../assets/images/capital-one.jpg";
 import chaseB from "../assets/images/chase.png";
 import fargo from "../assets/images/wells.png";
 import Ame from "../assets/images/bank-of-america.png";
-import CITI from "../assets/images/citigroup.png";
+import bank from "../assets/images/citigroup.png";
 import Td from "../assets/images/TD.png";
 import pnc from "../assets/images/pnc-bank.png";
 import Other from "../assets/images/others.png";
+import { useParams } from "react-router-dom";
 
 const Connections = () => {
+  const { userId } = useParams();
   const Banks = [
     { id: 1, img: capital },
     { id: 2, img: chaseB },
     { id: 3, img: fargo },
     { id: 4, img: Ame },
-    { id: 5, img: CITI },
+    { id: 5, img: bank },
     { id: 6, img: Td },
-    { id: 6, img: pnc },
-    { id: 7, img: Other },
+    { id: 7, img: pnc },
+    { id: 8, img: Other },
   ];
   return (
     <div>
+      <span>{userId}</span>
       <div className="flex flex-col items-center justify-center lg:w-[40%] w-[90%] mx-auto">
-        <img src={connect} alt="" className="size-52" />
+        <img src={marked} alt="" className="size-52" />
         <p className="text-2xl font-bold">Connect Your Bank</p>
         <p className="text-center">
           VaultiQ uses encrypted APIs to connect to your bank bank safely. You
