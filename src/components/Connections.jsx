@@ -103,7 +103,7 @@ const Connections = () => {
           </div>
         )}
         <button
-          disabled={isCustomBank} // disable when user clicked Other and input is open
+          disabled={isCustomBank}
           className={`mt-8 px-8 py-2 rounded-3xl text-3xl w-[80%] mb-6 ${
             isCustomBank
               ? "bg-blue-700 opacity-50 cursor-not-allowed"
