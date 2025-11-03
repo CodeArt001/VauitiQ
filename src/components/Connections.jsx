@@ -47,7 +47,7 @@ const Connections = () => {
 
   return (
     <div>
-      {/* <span>{userId}</span> */}
+      <span className="text-black">{userId}</span>
       <div className="flex flex-col  items-center justify-center lg:w-[40%] w-[90%] mx-auto">
         <img src={marked} alt="" className="size-52" />
         <p className="text-2xl font-bold">Connect Your Bank</p>
