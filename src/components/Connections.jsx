@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import marked from "../assets/images/mark.png";
 import capital from "../assets/images/capital-one.png";
 import chaseB from "../assets/images/chase.png";
@@ -8,9 +8,18 @@ import bank from "../assets/images/citigroup.png";
 import Td from "../assets/images/TD.png";
 import pnc from "../assets/images/pnc-bank.png";
 import Other from "../assets/images/others.png";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Authcontext } from "../Context/Authcontext";
 
 const Connections = () => {
+  const {
+    isCustomBank,
+    setIsCustomBank,
+    selectedBank,
+    setSelectedBank,
+    customBankName,
+    setCustomBankName,
+  } = useContext(Authcontext);
   const { userId } = useParams();
   const Banks = [
     { id: 1, name: "Capital One", img: capital },
@@ -22,9 +31,6 @@ const Connections = () => {
     { id: 7, name: "PNC Bank", img: pnc },
     { id: 8, name: "Other", img: Other },
   ];
-  const [selectedBank, setSelectedBank] = React.useState(null);
-  const [isCustomBank, setIsCustomBank] = React.useState(false);
-  const [customBankName, setCustomBankName] = React.useState("");
 
   const handleClickBank = (bank) => {
     if (bank.name === "Other") {
@@ -60,7 +66,9 @@ const Connections = () => {
               <div
                 key={items.id}
                 className={`bg-gray-500 rounded-3xl p-6 flex justify-center items-center w-[15rem] h-[8rem] ${
-                  selectedBank === items.id ? "border-4 border-blue-500" : ""
+                  selectedBank?.id === items.id
+                    ? "border-4 border-blue-500"
+                    : ""
                 }`}
                 onClick={() => handleClickBank(items)}
               >
@@ -101,19 +109,25 @@ const Connections = () => {
             </div>
           </div>
         )}
-        <button
-          disabled={isCustomBank}
-          className={`mt-8 px-8 py-2 rounded-3xl text-3xl w-[80%] mb-6 ${
-            isCustomBank
-              ? "bg-blue-700 opacity-50 cursor-not-allowed"
-              : "bg-blue-700 hover:bg-blue-500"
-          }`}
+
+        <Link
+          to={`/login/${userId}`}
+          className="flex w-full items-center justify-center "
         >
-          Continue
-        </button>
+          <button
+            disabled={isCustomBank}
+            className={`mt-8 px-10 py-2 rounded-3xl text-3xl w-[80%] mb-6 text- ${
+              isCustomBank
+                ? "bg-blue-700 opacity-50 cursor-not-allowed"
+                : "bg-blue-700 hover:bg-blue-500"
+            }`}
+          >
+            Continue
+          </button>
+        </Link>
 
         {selectedBank && (
-          <div className="flex flex-col items-center mt-8">
+          <div className="flex flex-col items-center my-8">
             <img
               src={selectedBank.img}
               alt={selectedBank.name}
