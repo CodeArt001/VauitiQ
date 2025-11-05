@@ -4,12 +4,21 @@ import { createContext } from "react";
 export const Authcontext = createContext();
 
 export const AuthProvider = ({ Children }) => {
-  const [login, setLogin] = React.useState("");
+  const [connect, setConnect] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [bank, setBank] = React.useState("");
   return (
     <Authcontext.Provider
       value={{
-        login,
-        setLogin,
+        connect,
+        setConnect,
+        password,
+        setPassword,
+        bank,
+        setBank,
+        email,
+        setEmail,
       }}
     >
       {Children}

@@ -29,7 +29,6 @@ const Connections = () => {
   const handleClickBank = (bank) => {
     if (bank.name === "Other") {
       setIsCustomBank(true);
-      // setSelectedBank(null);
       setCustomBankName("");
     } else {
       setSelectedBank(bank);
