@@ -6,11 +6,11 @@ const Login = () => {
     useContext(Authcontext);
   return (
     <div className="py-14">
-      <div className="px-10  lg:w-[40%] w-[90%]  m-auto mx-auto  overflow-y-hidden text-white flex items-center justify-center bg-gray-700 rounded-4xl h-[20rem] ">
-        <p>{selectedBank}</p>
+      <div className="px-10  lg:w-[40%] w-[90%]  m-auto mx-auto  overflow-y-hidden text-white flex items-center justify-center bg-gray-800 rounded-4xl h-[20rem] ">
+        <p>{selectedBank?.name}</p>
         <div className=" flex flex-col gap-5 w-full ">
           <p className="text-center text-3xl font-bold">
-            Securely Connects your {selectedBank} account{" "}
+            Securely Connects your {selectedBank?.name} account{" "}
           </p>
           <input
             type="text"
