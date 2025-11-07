@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Authcontext } from "../../Context/Authcontext";
+import padlock from "../../assets/images/middle.png";
 
 const Login = () => {
   const { email, setEmail, password, setPassword, selectedBank } =
@@ -20,13 +21,13 @@ const Login = () => {
         </div>
         <div className=" flex flex-col gap-5 w-full ">
           <p className="text-center text-2xl font-bold ">
-            Securely Connects your {selectedBank?.name} account{" "}
+            Securely Connects your {selectedBank?.name} account to Vault{" "}
           </p>
           <input
             type="text"
             placeholder="Email"
             value={email}
-            className="bg-white text-black px-3 h-10 border-4 border-blue-600"
+            className="bg-gray-500 text-black px-3 h-10 "
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
@@ -34,18 +35,19 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="bg-white text-black px-3 h-10"
+            className="bg-gray-500 text-black px-3 h-10"
           />
         </div>
-        <div className="mt-4">
+        <div className="mt-4 tracking-widest">
           <p>VaultiQ uses encrypted connection.</p>
           <p>Your credentials are never stored</p>
         </div>
-        <button className="bg-blue-700 px-5 py-2 font-bold rounded-3xl my-2">
+        <button className="bg-blue-700 px-5 py-2 font-bold rounded-3xl my-2 w-full hover:bg-blue-500">
           Connect Securely
         </button>
-        <button>Cancel and go back</button>
-        <div className="flex mb-9">
+        <button className="cursor-pointer">Cancel and go back</button>
+        <div className="flex mb-9 items-center">
+          <img src={padlock} alt="" className="w-16 h-10" />
           <p>Bank-level security powered by </p>
         </div>
       </div>
