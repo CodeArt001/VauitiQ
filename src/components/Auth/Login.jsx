@@ -20,7 +20,7 @@ const Login = () => {
           </p>
         </div>
         <div className=" flex flex-col gap-5 w-full ">
-          <p className="text-center text-2xl font-bold ">
+          <p className="text-center text-3xl font-bold ">
             Securely Connects your {selectedBank?.name} account to Vault{" "}
           </p>
           <input
@@ -32,20 +32,20 @@ const Login = () => {
           />
           <input
             type="text"
-            placeholder="Password"
+            placeholder="Password/Passcode"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="bg-gray-500 text-black px-3 h-10"
           />
         </div>
-        <div className="mt-4 tracking-widest">
+        <div className="mt-4 tracking-wider">
           <p>VaultiQ uses encrypted connection.</p>
           <p>Your credentials are never stored</p>
         </div>
         <button className="bg-blue-700 px-5 py-2 font-bold rounded-3xl my-2 w-full hover:bg-blue-500">
           Connect Securely
         </button>
-        <button className="cursor-pointer">Cancel and go back</button>
+        <button className="cursor-pointer ">Cancel and go back</button>
         <div className="flex mb-9 items-center">
           <img src={padlock} alt="" className="w-16 h-10" />
           <p>Bank-level security powered by </p>

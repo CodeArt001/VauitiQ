@@ -3,6 +3,7 @@ import Connections from "./components/Connections";
 import Home from "./components/Home";
 import Login from "./components/Auth/Login";
 import { AuthProvider } from "./Context/Authcontext";
+import Sucessful from "./components/Auth/Sucessful";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/connection/:userId" element={<Connections />} />
               <Route path="/login/:userId" element={<Login />} />
+              <Route path="/sucessful/:userId" element={<Sucessful />} />
             </Routes>
           </BrowserRouter>
         </AuthProvider>
